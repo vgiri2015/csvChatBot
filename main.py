@@ -49,10 +49,10 @@ if __name__ == '__main__':
             st.session_state['history'] = []
 
         if 'generated' not in st.session_state:
-            st.session_state['generated'] = ["Hello ! Ask me anything about " + uploaded_file.name + " 🤗"]
+            st.session_state['generated'] = ["Hello ! Type here " + uploaded_file.name]
 
         if 'past' not in st.session_state:
-            st.session_state['past'] = ["Hey ! 👋"]
+            st.session_state['past'] = ["Hi"]
 
             # container for the chat history
         response_container = st.container()
