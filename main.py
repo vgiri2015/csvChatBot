@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 from streamlit_chat import message
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -16,9 +18,10 @@ def conversational_chat(query):
     return result["answer"]
 
 if __name__ == '__main__':
+    os.environ["OPENAI_API_KEY"] = ""
     user_api_key = st.sidebar.text_input(
         label="Giri Open AI API Key",
-        placeholder="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",
+        placeholder="",
         type="password")
 
     uploaded_file = st.sidebar.file_uploader("upload", type="csv")
