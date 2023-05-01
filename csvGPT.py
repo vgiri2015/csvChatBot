@@ -17,10 +17,11 @@ def conversational_chat(query):
 
     return result["answer"]
 
+
 if __name__ == '__main__':
     os.environ["OPENAI_API_KEY"] = ""
     user_api_key = st.sidebar.text_input(
-        label="Giri Open AI API Key",
+        label="My Open AI API Key",
         placeholder="",
         type="password")
 
@@ -49,7 +50,7 @@ if __name__ == '__main__':
             st.session_state['history'] = []
 
         if 'generated' not in st.session_state:
-            st.session_state['generated'] = ["Hello ! Type here " + uploaded_file.name]
+            st.session_state['generated'] = ["Hello !  I am trained on your CSV data. Type your question here. " + uploaded_file.name]
 
         if 'past' not in st.session_state:
             st.session_state['past'] = ["Hi"]
